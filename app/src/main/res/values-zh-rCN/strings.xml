@@ -7,6 +7,6 @@
     <string name="Password">密码</string>
     <string name="loginHint">用户名</string>
     <string name="Switch">干啥用的?</string>
-    <string name="Radiobutton">单选</string>3
+    <string name="Radiobutton">单选</string>
     <string name="CheckBox">多选</string>
 </resources>
