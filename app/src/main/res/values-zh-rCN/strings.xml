@@ -1,12 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">AndroidLabs</string>
-    <string name="hello_message">你好!</string>
-    <string name="ButtonText">单击</string>
-    <string name="Login">用户名</string>
-    <string name="Password">密码</string>
-    <string name="loginHint">用户名</string>
-    <string name="Switch">干啥用的?</string>
-    <string name="Radiobutton">单选</string>
+    <string name="app_name">第一课</string>
+
+    <string name="hello_message">你好</string>
+
+    <string name="ButtonText">我是按钮</string>
+
+    <string name="login">登陆</string>
+
+    <string name="hint">l用户名</string>
+
+    <string name="password">密码</string>
+
+    <string name="RadioButton">单选</string>
+
     <string name="CheckBox">多选</string>
+
+    <string name="Switch">干啥用的？</string>
+
+    <string name="dialog_message">你要退出吗？</string>
+
+    <string name="dialog_title">注意！</string>
+
+    <string name="ok">是</string>
+
+    <string name="cancel">否</string>
+
+    <!---<string name="test111">111</string>-->
+
+    <string name="test222">222</string>
+
+    <string name="SwitchOn">开</string>
+
+    <string name="SwitchOff">关</string>
+
 </resources>
