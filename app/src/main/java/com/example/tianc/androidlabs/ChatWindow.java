@@ -21,11 +21,9 @@ import com.example.tianc.androidlabs.sampledata.ChatDatabaseHelper;
 
 import java.util.ArrayList;
 
-import static com.example.tianc.androidlabs.StartActivity.ACTIVITY_NAME;
-
 
 public class ChatWindow extends Activity {
-
+    protected static final String ACTIVITY_NAME = "ChatWindow";
     ListView chatView;
     Button buttonChat;
     EditText editText;
@@ -76,13 +74,13 @@ public class ChatWindow extends Activity {
             public void onClick(View view) {
                 String data = editText.getText().toString();
                 messages.add(data);
-                messageAdapter.notifyDataSetChanged();
                 //Insert the new message into the database, contentValues object will put the new message
                 ContentValues contentValues = new ContentValues();
                 contentValues.put(dbManager.KEY_MESSAGE,editText.getText().toString());
 
                 long insertCheck = db.insert(dbManager.TABLE_NAME,null,contentValues);
-                Log.i("StartChat", "insert data result: " + insertCheck);
+                Log.i(ACTIVITY_NAME, "insert data result: " + insertCheck);
+                messageAdapter.notifyDataSetChanged();
                 editText.setText("");
 
             }

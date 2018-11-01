@@ -33,5 +33,12 @@
 
     <string name="SwitchOff">Switch is Off</string>
 
+    <string name="StartChat">Start Chat</string>
+
+    <string name="SendButton">Send</string>
+
+    <string name="input">Please enter here!</string>
+
+
 
 </resources>
