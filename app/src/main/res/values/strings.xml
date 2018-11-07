@@ -39,6 +39,14 @@
 
     <string name="input">Please enter here!</string>
 
+    <string name="currentTemp">Current Temp!</string>
 
+    <string name="minTemp">Lowest Temp!</string>
+
+    <string name="maxTemp">Highest Temp!</string>
+
+    <string name="WeatherForecast">Weather Forecast!</string>
+
+    <string name="windSpeed">Wind Speed!</string>
 
 </resources>

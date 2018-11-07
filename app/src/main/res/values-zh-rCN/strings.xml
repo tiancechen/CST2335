@@ -40,4 +40,15 @@
 
     <string name="input">请输入!</string>
 
+    <string name="currentTemp">现时温度!</string>
+
+    <string name="minTemp">最低温度!</string>
+
+    <string name="maxTemp">最高温度!</string>
+
+    <string name="WeatherForecast">查天气!</string>
+
+    <string name="windSpeed">风速!</string>
+
+
 </resources>

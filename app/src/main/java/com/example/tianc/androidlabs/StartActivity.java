@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 
 public class StartActivity extends Activity {
-    Button btn, btn2;
+    Button btn, btn2, btn3;
     protected static final String ACTIVITY_NAME = "StartActivity";
 
     @Override
@@ -47,6 +47,15 @@ public class StartActivity extends Activity {
             }
         });
 
+        btn3 = findViewById(R.id.button5);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.i(ACTIVITY_NAME, "User clicked Weather Forecast");
+                Intent intent = new Intent(StartActivity.this, WeatherForecast.class);
+                startActivity(intent);
+            }
+        });
 
     }// end in on create
 
