@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/item3_im"
+        android:src="@drawable/question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="center"
+        android:contentDescription="@string/app_name" />
+
+    <TextView
+        android:id="@+id/lab8_textView"
+        android:layout_below="@+id/item3_im"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/newMessage"/>
+
+    <EditText
+        android:id="@+id/lab8_editText"
+        android:layout_below="@+id/lab8_textView"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:hint="@string/hint"/>
+</RelativeLayout>

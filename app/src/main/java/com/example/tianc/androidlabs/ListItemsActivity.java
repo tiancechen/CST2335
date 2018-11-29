@@ -1,247 +1,125 @@
 package com.example.tianc.androidlabs;
 
-
-
-
-
 import android.app.Activity;
-
 import android.app.AlertDialog;
-
 import android.content.DialogInterface;
-
 import android.content.Intent;
-
 import android.graphics.Bitmap;
-
 import android.os.Bundle;
-
 import android.provider.MediaStore;
-
 import android.util.Log;
-
 import android.view.View;
-
 import android.widget.CheckBox;
-
 import android.widget.CompoundButton;
-
 import android.widget.ImageButton;
-
 import android.widget.Switch;
-
 import android.widget.Toast;
 
-
-
 public class ListItemsActivity extends Activity {
-
-
-
     protected static final String ACTIVITY_NAME = "ListItemsActivity";
+    protected static final int REQUEST_IMAGE_CAPTURE = 1;
 
-    static final int REQUEST_IMAGE_CAPTURE = 1;
-
-
-
+    ImageButton imageButton;
     @Override
-
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_list_items);
 
-        Log.i(ACTIVITY_NAME, "In onCreate()");
-
-
-
-        ImageButton imageButton = (ImageButton)findViewById(R.id.imageButton);
-
-        imageButton.setOnClickListener(new View.OnClickListener(){
-
+        Log.i(ACTIVITY_NAME,"In onCreate()");
+        imageButton = findViewById(R.id.ibtn);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
-
                 Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-
-                // Ensure that there's a camera activity to handle the intent
-
                 if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-
                     startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-
                 }
-
             }
-
         });
-
-
-
-        Switch switchButton = (Switch)findViewById(R.id.switch1);
-
-        switchButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-
+        Switch sw1 = findViewById(R.id.sw);
+        sw1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-
-            public void onCheckedChanged(CompoundButton switchButton, boolean isChecked) {
-
-                if (isChecked){
-
-//                    CharSequence text = "Switch is On"; //Switch is Off
-
-                    int duration = Toast.LENGTH_SHORT;
-
-                    Toast toast = Toast.makeText(getApplicationContext(), R.string.SwitchOn, duration); //this is the ListActivity
-
-                    toast.show(); //display message "Switch is On" if the switch is checked
-
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                CharSequence text;
+                int duration;
+                if (isChecked) {
+                    text = getString(R.string.swOn);
+                    duration = Toast.LENGTH_SHORT;
+                }else {
+                    text = getString(R.string.swOff);
+                    duration = Toast.LENGTH_LONG;
                 }
-
-                if (!isChecked){
-
-//                    CharSequence text = "Switch is Off"; //Switch is Off
-
-                    int duration = Toast.LENGTH_LONG;
-
-                    Toast toast = Toast.makeText(getApplicationContext(), R.string.SwitchOff, duration); //this is the ListActivity
-
-                    toast.show(); //display message "Switch is Off" if the switch is unchecked
-
-                }
-
+                Toast toast = Toast.makeText(ListItemsActivity.this,text,duration);
+                toast.show();
             }
-
         });
-
-
-
-        CheckBox checkBox = (CheckBox)findViewById(R.id.checkBox);
-
-        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-
+        CheckBox cb = findViewById(R.id.cb);
+        cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-
-            public void onCheckedChanged(CompoundButton checkBox, boolean isChecked) {
-
-                if (isChecked){
-
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(ListItemsActivity.this);
+                    builder.setMessage(R.string.dialog_message).setTitle(R.string.dialog_title).setPositiveButton(R.string.OK, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent resultIntent = new Intent();
+                            resultIntent.putExtra("Response", getString(R.string.response));
+                            setResult(Activity.RESULT_OK, resultIntent);
+                            finish();
+                        }
+                    }).setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            // User cancelled the dialog
 
-                    //Chain together various setter methods to set the dialog characteristics
-
-                    builder.setMessage(R.string.dialog_message) //Add a dialog message to strings.xml
-
-
-
-                            .setTitle(R.string.dialog_title)
-
-                            .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-
-                                public void onClick(DialogInterface dialog, int id) {
-
-                                    Intent resultIntent = new Intent(  );
-
-                                    resultIntent.putExtra("Response", "Here is my response");
-
-                                    setResult(Activity.RESULT_OK, resultIntent);
-
-                                    finish(); // User clicked OK button
-
-                                }
-
-                            })
-
-                            .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
-
-                                public void onClick(DialogInterface dialog, int id) {
-
-                                    // User cancelled the dialog
-
-                                }
-
-                            })
-
-                            .show();
-
+                        }
+                    }).show();
                 }
-
             }
-
         });
-
-
-
     }
 
-
-
-    protected void onActivityResult(int requestCode, int responseCode, Intent data){
-
-        setResult(Activity.RESULT_OK);
-
-        if (requestCode == REQUEST_IMAGE_CAPTURE && responseCode == RESULT_OK) {
-
-            Bundle extras = data.getExtras();
-
-            Bitmap bitmap = (Bitmap) extras.get("data");
-
-            ImageButton imageButton = (ImageButton)findViewById(R.id.imageButton);
-
-            imageButton.setImageBitmap(bitmap);
-
-        }
-
-    }
-
-
-
-    protected void onResume(){
-
+    @Override
+    protected void onResume() {
         super.onResume();
 
-        Log.i(ACTIVITY_NAME, "In onResume()");
-
+        Log.i(ACTIVITY_NAME,"In onResume()");
     }
 
-
-
-    protected void onStart(){
-
+    @Override
+    protected void onStart() {
         super.onStart();
 
-        Log.i(ACTIVITY_NAME, "In onStart()");
-
+        Log.i(ACTIVITY_NAME,"In onStart()");
     }
 
-
-
-    protected void onPause(){
-
+    @Override
+    protected void onPause() {
         super.onPause();
 
-        Log.i(ACTIVITY_NAME, "In onPause()");
-
+        Log.i(ACTIVITY_NAME,"In onPause()");
     }
 
-
-
-    protected void onStop(){
-
+    @Override
+    protected void onStop() {
         super.onStop();
 
-        Log.i(ACTIVITY_NAME, "In onStop()");
-
+        Log.i(ACTIVITY_NAME,"In onStop()");
     }
 
-
-
-    protected void onDestroy(){
-
+    @Override
+    protected void onDestroy() {
         super.onDestroy();
 
-        Log.i(ACTIVITY_NAME, "In onDestroy()");
-
+        Log.i(ACTIVITY_NAME,"In onDestroy()");
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) throws NullPointerException{
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            imageButton.setImageBitmap(imageBitmap);
+        }
+    }
 }

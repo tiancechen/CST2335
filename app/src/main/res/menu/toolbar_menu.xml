@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/action_one"
+        android:title="first"
+        android:icon="@drawable/add1"
+        android:orderInCategory="101"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/action_two"
+        android:title="Two"
+        android:icon="@drawable/add2"
+        android:orderInCategory="102"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/action_three"
+        android:title="Three"
+        android:icon="@drawable/add3"
+        android:orderInCategory="103"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/action_about"
+        android:title="@string/toolbar_about"
+        android:orderInCategory="104"
+        app:showAsAction="never" />
+
+</menu>

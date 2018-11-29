@@ -1,52 +1,32 @@
 <resources>
-    <string name="app_name">Lab1</string>
-
+    <string name="app_name">Lab</string>
     <string name="hello_message">Hello World!</string>
-
     <string name="ButtonText">I\'m a button</string>
-
     <string name="login">Login</string>
-
-    <string name="hint">login name</string>
-
-    <string name="password">Password</string>
-
-    <string name="RadioButton">RadioButton</string>
-
-    <string name="CheckBox">CheckBox</string>
-
-    <string name="Switch">What does this do?</string>
-
-    <string name="dialog_message">Are you sure to exit?</string>
-
-    <string name="dialog_title">Alert</string>
-
-    <string name="ok">YES</string>
-
-    <string name="cancel">NO</string>
-
-    <!---<string name="test111">111</string>-->
-
-    <string name="test222">222</string>
-
-    <string name="SwitchOn">Switch is On</string>
-
-    <string name="SwitchOff">Switch is Off</string>
-
-    <string name="StartChat">Start Chat</string>
-
-    <string name="SendButton">Send</string>
-
-    <string name="input">Please enter here!</string>
-
-    <string name="currentTemp">Current Temp!</string>
-
-    <string name="minTemp">Lowest Temp!</string>
-
-    <string name="maxTemp">Highest Temp!</string>
-
-    <string name="WeatherForecast">Weather Forecast!</string>
-
-    <string name="windSpeed">Wind Speed!</string>
-
+    <string name="login_name">login name</string>
+    <string name="password">password</string>
+    <string name="radio_button">RadioButton</string>
+    <string name="check_box">CheckBox</string>
+    <string name="sw">What does it do</string>
+    <string name="login_button">Log in</string>
+    <string name="dialog_message">Do you want to terminate the Activity?</string>
+    <string name="dialog_title">Confirmation</string>
+    <string name="OK">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="response">My information to share</string>
+    <string name="swOn">Switch is on</string>
+    <string name="swOff">Switch is off</string>
+    <string name="description">This is a image choosing button</string>
+    <string name="description2">This is a image</string>
+    <string name="start_chat">Start Chat</string>
+    <string name="send">Send</string>
+    <string name="weather_forecast">Weather Forecast</string>
+    <string name="delete_message">Delete Message</string>
+    <string name="toolbar_button">Test Toolbar</string>
+    <string name="toolbar_about">About</string>
+    <string name="toolbar_snack">Snackbar</string>
+    <string name="about">Version 1.0, by Xin Zhao</string>
+    <string name="dailog_title">Do you want to go back?</string>
+    <string name="newMessage">What is your new message?</string>
+    <string name="hint">Type here</string>
 </resources>
